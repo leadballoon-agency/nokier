@@ -221,9 +221,9 @@ function completeAssessment() {
 
     // Determine tier (satirical logic)
     let tier = 'TIER 2';
-    if (assessmentData.income === '£60k+') {
+    if (assessmentData.income === 'Inherited Wealth') {
         tier = 'TIER 1';
-    } else if (assessmentData.income === 'Prefer not to say') {
+    } else if (assessmentData.income === 'Heating or Eating') {
         tier = 'TIER 3';
     }
     assessmentData.tier = tier;
@@ -234,6 +234,9 @@ function completeAssessment() {
 
     // Update global counter
     localStorage.setItem('nokierTotalSignups', totalSignups + 1);
+
+    // Send to GHL webhook
+    sendToWebhook(assessmentData);
 
     // Show success
     document.getElementById('tierAssessment').style.display = 'none';
@@ -246,6 +249,22 @@ function completeAssessment() {
         const modalContainer = document.querySelector('.modal-container');
         modalContainer.scrollTop = 0;
     }, 100);
+}
+
+// Send data to GHL webhook
+function sendToWebhook(data) {
+    const webhookUrl = 'https://services.leadconnectorhq.com/hooks/jeP8qYLTGnfE7C0voenO/webhook-trigger/054d81cc-0d2d-42ec-ab25-ec8146f27b89';
+
+    fetch(webhookUrl, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data)
+    }).catch(error => {
+        console.log('Webhook error:', error);
+        // Silently fail - don't interrupt user experience
+    });
 }
 
 // Get real waitlist count
