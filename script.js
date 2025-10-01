@@ -223,7 +223,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 100);
 });
 
-function completeAssessment() {
+async function completeAssessment() {
     const email = document.getElementById('widgetEmail').value;
 
     if (!email || !email.includes('@')) {
@@ -237,9 +237,8 @@ function completeAssessment() {
     assessmentData.timestamp = new Date().toISOString();
     assessmentData.sharesCount = sharesCount; // Track how many times they shared
 
-    // Get current total waitlist count
-    let waitlist = JSON.parse(localStorage.getItem('nokierWaitlist') || '[]');
-    let totalSignups = waitlist.length;
+    // Get current total waitlist count from database
+    const totalSignups = await getWaitlistCount();
 
     // Your position = total signups + 1 (you're the newest) + penalty for shares
     const sharePenalty = sharesCount * 100;
@@ -254,12 +253,41 @@ function completeAssessment() {
     }
     assessmentData.tier = tier;
 
-    // Save to localStorage
-    waitlist.push(assessmentData);
-    localStorage.setItem('nokierWaitlist', JSON.stringify(waitlist));
+    // Save to Neon database
+    try {
+        const response = await fetch('/api/signup', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                email: assessmentData.email,
+                tier: assessmentData.tier,
+                queueNumber: assessmentData.queueNumber,
+                favoritePolicy: assessmentData.favoritePolicy,
+                income: assessmentData.income,
+                sharesCount: assessmentData.sharesCount,
+                compliance: assessmentData.compliance,
+                freeSpeechUpgrade: assessmentData.freeSpeechUpgrade
+            })
+        });
 
-    // Update global counter
-    localStorage.setItem('nokierTotalSignups', totalSignups + 1);
+        const result = await response.json();
+
+        if (response.ok) {
+            // Update queue number with actual database count
+            assessmentData.queueNumber = result.queueNumber;
+        } else if (result.exists) {
+            showAlert(7, 'This email is already registered on the waitlist!');
+            return;
+        }
+    } catch (error) {
+        console.error('Database save failed:', error);
+        // Fallback to localStorage if database fails
+        let waitlist = JSON.parse(localStorage.getItem('nokierWaitlist') || '[]');
+        waitlist.push(assessmentData);
+        localStorage.setItem('nokierWaitlist', JSON.stringify(waitlist));
+    }
 
     // Send to GHL webhook
     sendToWebhook(assessmentData);
@@ -276,6 +304,9 @@ function completeAssessment() {
         const modalContainer = document.querySelector('.modal-container');
         modalContainer.scrollTop = 0;
     }, 100);
+
+    // Update the live count display
+    updateQueueNumber();
 }
 
 // Send data to GHL webhook
@@ -294,19 +325,27 @@ function sendToWebhook(data) {
     });
 }
 
-// Get real waitlist count
-function getWaitlistCount() {
-    let waitlist = JSON.parse(localStorage.getItem('nokierWaitlist') || '[]');
-    return waitlist.length;
+// Get real waitlist count from Neon database
+async function getWaitlistCount() {
+    try {
+        const response = await fetch('/api/count');
+        const data = await response.json();
+        return data.count || 0;
+    } catch (error) {
+        console.error('Failed to fetch waitlist count:', error);
+        // Fallback to localStorage if API fails
+        let waitlist = JSON.parse(localStorage.getItem('nokierWaitlist') || '[]');
+        return waitlist.length;
+    }
 }
 
 // Update queue number display with real count
-function updateQueueNumber() {
+async function updateQueueNumber() {
     const heroQueueNumber = document.getElementById('heroQueueNumber');
     const shareQueueNumber = document.getElementById('shareQueueNumber');
 
-    // Get real count of people on waitlist
-    const realCount = getWaitlistCount();
+    // Get real count of people on waitlist from database
+    const realCount = await getWaitlistCount();
 
     // Show real count to demonstrate viral growth
     const displayNumber = realCount.toLocaleString();
@@ -378,9 +417,9 @@ function shareOn(platform) {
     }
 }
 
-function jumpQueue() {
+async function jumpQueue() {
     const penalty = sharesCount * 100; // Penalty: 100 positions per share!
-    const currentWaitlist = getWaitlistCount();
+    const currentWaitlist = await getWaitlistCount();
     const newPosition = currentWaitlist + 1 + penalty; // Your position gets worse
 
     // Update all queue number displays
