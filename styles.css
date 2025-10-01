@@ -1191,6 +1191,34 @@ body {
     margin-top: 15px !important;
 }
 
+/* Payment Notice */
+.payment-notice {
+    margin-top: 30px;
+    padding: 20px;
+    background: linear-gradient(135deg, rgba(18, 65, 145, 0.08) 0%, rgba(75, 0, 130, 0.08) 100%);
+    border-radius: 12px;
+    border: 2px solid rgba(75, 0, 130, 0.3);
+}
+
+.payment-notice h3 {
+    font-size: 1.3rem;
+    color: var(--nokia-blue);
+    margin-bottom: 12px;
+}
+
+.payment-text {
+    font-size: 1rem;
+    color: var(--gray-dark);
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.payment-hint {
+    font-size: 0.85rem;
+    color: var(--gray-medium);
+    font-style: italic;
+}
+
 /* Success Share Section */
 .success-share-section {
     margin-top: 40px;
