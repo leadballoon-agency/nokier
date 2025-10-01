@@ -1213,10 +1213,90 @@ body {
     font-weight: 600;
 }
 
-.payment-hint {
+.payment-subtext {
+    font-size: 0.95rem;
+    color: var(--gray-medium);
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.crypto-donation {
+    margin-top: 20px;
+}
+
+.crypto-label {
     font-size: 0.85rem;
     color: var(--gray-medium);
-    font-style: italic;
+    margin-bottom: 8px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.crypto-qr-container {
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.crypto-qr {
+    max-width: 200px;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 2px solid rgba(75, 0, 130, 0.3);
+    background: white;
+    padding: 8px;
+}
+
+.crypto-address-box {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid rgba(75, 0, 130, 0.2);
+    margin-bottom: 12px;
+}
+
+.crypto-address {
+    flex: 1;
+    font-family: 'Courier New', monospace;
+    font-size: 0.75rem;
+    color: #4B0082;
+    word-break: break-all;
+    line-height: 1.4;
+    background: transparent;
+    padding: 0;
+}
+
+.copy-btn {
+    padding: 8px 16px;
+    background: var(--nokia-blue);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.copy-btn:hover {
+    background: var(--light-blue);
+    transform: translateY(-1px);
+}
+
+.copy-btn:active {
+    transform: translateY(0);
+}
+
+.crypto-warning {
+    font-size: 0.8rem;
+    color: var(--red-accent);
+    font-weight: 600;
+    text-align: center;
 }
 
 /* Success Share Section */

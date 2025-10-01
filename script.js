@@ -474,6 +474,26 @@ document.addEventListener('DOMContentLoaded', () => {
     featureCards.forEach(card => observer.observe(card));
 });
 
+// Copy Monero address to clipboard
+function copyAddress() {
+    const address = document.getElementById('xmrAddress').textContent;
+
+    navigator.clipboard.writeText(address).then(() => {
+        const btn = event.target;
+        const originalText = btn.textContent;
+        btn.style.background = '#10b981'; // Green
+        btn.textContent = 'Copied!';
+
+        setTimeout(() => {
+            btn.textContent = originalText;
+            btn.style.background = '';
+        }, 2000);
+    }).catch(err => {
+        console.error('Failed to copy:', err);
+        showAlert(7, 'Failed to copy address. Please copy manually.');
+    });
+}
+
 // Easter egg: Click the background phone image multiple times
 let clickCount = 0;
 const phoneImage = document.querySelector('.hero-bg-image') || document.querySelector('.phone-image-full') || document.querySelector('.phone-image');
