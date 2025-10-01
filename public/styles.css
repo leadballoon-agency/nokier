@@ -1194,16 +1194,18 @@ body {
 /* Payment Notice */
 .payment-notice {
     margin-top: 30px;
-    padding: 20px;
-    background: linear-gradient(135deg, rgba(18, 65, 145, 0.08) 0%, rgba(75, 0, 130, 0.08) 100%);
+    padding: 25px;
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.12) 0%, rgba(255, 140, 0, 0.08) 100%);
     border-radius: 12px;
-    border: 2px solid rgba(75, 0, 130, 0.3);
+    border: 2px solid rgba(255, 165, 0, 0.4);
+    text-align: center;
 }
 
 .payment-notice h3 {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     color: var(--nokia-blue);
     margin-bottom: 12px;
+    font-weight: 700;
 }
 
 .payment-text {
@@ -1218,6 +1220,52 @@ body {
     color: var(--gray-medium);
     margin-bottom: 20px;
     font-style: italic;
+}
+
+.vip-upgrade-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 32px;
+    background: linear-gradient(135deg, #FF6600 0%, #FF8C00 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.vip-upgrade-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(255, 102, 0, 0.3);
+}
+
+.vip-crypto-icon {
+    height: 20px;
+    width: auto;
+}
+
+/* Donation Notice */
+.donation-notice {
+    margin-top: 30px;
+    padding: 20px;
+    background: linear-gradient(135deg, rgba(18, 65, 145, 0.08) 0%, rgba(75, 0, 130, 0.08) 100%);
+    border-radius: 12px;
+    border: 2px solid rgba(75, 0, 130, 0.3);
+}
+
+.donation-notice h3 {
+    font-size: 1.2rem;
+    color: var(--nokia-blue);
+    margin-bottom: 12px;
+}
+
+.donation-text {
+    font-size: 0.95rem;
+    color: var(--gray-dark);
+    margin-bottom: 15px;
 }
 
 .crypto-donation {
@@ -1691,10 +1739,9 @@ html {
     gap: 10px;
 }
 
-.crypto-icon {
-    font-size: 1.8rem;
-    color: #FF6600;
-    font-weight: 700;
+.crypto-logo-hero {
+    height: 24px;
+    width: auto;
 }
 
 .payment-text {
@@ -1704,19 +1751,17 @@ html {
 }
 
 .buy-now-link {
-    color: var(--nokia-blue);
-    font-size: 1.1rem;
-    font-weight: 700;
+    color: var(--gray-medium);
+    font-size: 0.9rem;
+    font-weight: 500;
     text-decoration: none;
-    border-bottom: 2px solid var(--nokia-blue);
+    opacity: 0.7;
     transition: all 0.3s ease;
-    padding-bottom: 2px;
 }
 
 .buy-now-link:hover {
-    color: var(--light-blue);
-    border-bottom-color: var(--light-blue);
-    transform: translateX(5px);
+    opacity: 1;
+    color: var(--nokia-blue);
 }
 
 /* Payment Modal Content */

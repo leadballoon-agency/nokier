@@ -51,11 +51,11 @@
                 <p class="hero-subprice">(The government does!)</p>
                 <div class="hero-payment-section">
                     <div class="payment-crypto">
-                        <span class="crypto-icon">Ӿ</span>
+                        <img src="Images/monero-logo-800.png" alt="Monero" class="crypto-logo-hero">
                         <span class="payment-text">Accepting: Monero</span>
                     </div>
-                    <a href="#" class="buy-now-link" onclick="event.preventDefault(); showPaymentModal();">
-                        Buy Now & Skip the Queue →
+                    <a href="#" class="buy-now-link" onclick="event.preventDefault(); openModal();">
+                        Skip the Queue →
                     </a>
                 </div>
             </div>
@@ -376,9 +376,18 @@
                         <p class="final-position-tracker">Your final position: <span id="finalPositionTracker">47,832</span></p>
 
                         <div class="payment-notice">
-                            <h3>Support The Cause</h3>
-                            <p class="payment-text">To avoid Rachel from accounts, we only accept Monero.</p>
-                            <p class="payment-subtext">Your wait will never end. But you can still donate for the irony.</p>
+                            <h3>Government Shortcut Available</h3>
+                            <p class="payment-text">Skip the queue with our exclusive Fast Track service.</p>
+                            <p class="payment-subtext">Because why wait when you can pay to wait differently?</p>
+                            <button class="vip-upgrade-btn" onclick="showPaymentModal()">
+                                <img src="Images/monero-logo-800.png" alt="Monero" class="vip-crypto-icon">
+                                View Priority Processing →
+                            </button>
+                        </div>
+
+                        <div class="donation-notice">
+                            <h3>Or Support The Cause</h3>
+                            <p class="donation-text">To avoid Rachel from accounts, we only accept Monero.</p>
 
                             <div class="crypto-donation">
                                 <p class="crypto-label">Monero (XMR) Address:</p>
@@ -425,7 +434,7 @@
                     <div class="crypto-donation">
                         <p class="crypto-label">Monero (XMR) Address:</p>
                         <div class="crypto-qr-container">
-                            <img src="Images/monero.png" alt="Monero QR Code" class="crypto-qr">
+                            <img src="Images/monero-logo-800.png" alt="Monero Logo" class="crypto-qr">
                         </div>
                         <div class="crypto-address-box">
                             <code class="crypto-address" id="paymentXmrAddress">4ADvyqY6VAuSH1JMZuFtDEXfwmms3J5GQhVJhCjEQz4Xa4ZbTbui9utV1YWwHAE5qx5EnnKnPJnTPAmCCJC66CM9QGPyMvg</code>
