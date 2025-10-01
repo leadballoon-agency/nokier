@@ -417,6 +417,26 @@ function shareOn(platform) {
     }
 }
 
+// Share from success modal (triggers thank you)
+function shareOnSuccess(platform) {
+    shareOn(platform);
+
+    // Show thank you modal after a delay
+    setTimeout(() => {
+        showThankYou();
+    }, 1500);
+}
+
+// Show thank you / donation modal
+function showThankYou() {
+    document.getElementById('successMessage').classList.add('hidden');
+    document.getElementById('thankYouMessage').classList.remove('hidden');
+
+    // Update final position in thank you modal
+    const finalPos = document.getElementById('finalQueue').textContent;
+    document.getElementById('finalPositionTracker').textContent = finalPos;
+}
+
 async function jumpQueue() {
     const penalty = sharesCount * 100; // Penalty: 100 positions per share!
     const currentWaitlist = await getWaitlistCount();

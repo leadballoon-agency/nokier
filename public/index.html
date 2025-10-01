@@ -326,14 +326,44 @@
                     <!-- Success Message -->
                     <div id="successMessage" class="success-message hidden">
                         <div class="success-icon">✓</div>
-                        <h2>Assessment Complete</h2>
+                        <h2>You're On The List!</h2>
                         <div class="tier-result">
-                            <p class="tier-label">Your Tier Classification:</p>
                             <p class="tier-badge" id="tierBadge">TIER 2</p>
                         </div>
-                        <p>Tier verification in progress. We'll notify you when we get around to it.</p>
+                        <p class="queue-final">Queue Position: <span id="finalQueue">47,832</span></p>
                         <p class="success-subtext">Expected wait time: Eventually.</p>
-                        <p class="queue-final">You are number <span id="finalQueue">47,832</span> in queue</p>
+
+                        <div class="success-share-section">
+                            <h3>Help Us Spread The Word</h3>
+                            <p class="success-share-text">Share NoKier 2 with your network</p>
+                            <p class="success-share-hint">(Your queue position may be affected by increased demand)</p>
+                            <div class="success-share-buttons">
+                                <button class="modal-share-btn twitter" onclick="shareOnSuccess('twitter')">
+                                    <span class="share-icon">𝕏</span>
+                                    <span>Share on X</span>
+                                </button>
+                                <button class="modal-share-btn facebook" onclick="shareOnSuccess('facebook')">
+                                    <span class="share-icon">f</span>
+                                    <span>Share on Facebook</span>
+                                </button>
+                                <button class="modal-share-btn linkedin" onclick="shareOnSuccess('linkedin')">
+                                    <span class="share-icon">in</span>
+                                    <span>Share on LinkedIn</span>
+                                </button>
+                                <button class="modal-share-btn whatsapp" onclick="shareOnSuccess('whatsapp')">
+                                    <span class="share-icon">💬</span>
+                                    <span>Share on WhatsApp</span>
+                                </button>
+                            </div>
+                            <button class="skip-share-btn" onclick="showThankYou()">Skip for now</button>
+                        </div>
+                    </div>
+
+                    <div id="thankYouMessage" class="success-message hidden">
+                        <div class="success-icon">🎉</div>
+                        <h2>Thank You!</h2>
+                        <p class="thank-you-text">Your support helps keep the wheels moving</p>
+                        <p class="final-position-tracker">Your final position: <span id="finalPositionTracker">47,832</span></p>
 
                         <div class="payment-notice">
                             <h3>Support The Cause</h3>
@@ -353,30 +383,7 @@
                             </div>
                         </div>
 
-                        <div class="success-share-section">
-                            <h3>Sharing Makes You Free</h3>
-                            <p class="success-share-text">Help spread Two-Tier Technology™ to your network!</p>
-                            <p class="success-share-hint">(Note: Sharing may affect your queue position due to increased demand)</p>
-                            <div class="success-share-buttons">
-                                <button class="modal-share-btn twitter" onclick="shareOn('twitter')">
-                                    <span class="share-icon">𝕏</span>
-                                    <span>Share on X</span>
-                                </button>
-                                <button class="modal-share-btn facebook" onclick="shareOn('facebook')">
-                                    <span class="share-icon">f</span>
-                                    <span>Share on Facebook</span>
-                                </button>
-                                <button class="modal-share-btn linkedin" onclick="shareOn('linkedin')">
-                                    <span class="share-icon">in</span>
-                                    <span>Share on LinkedIn</span>
-                                </button>
-                                <button class="modal-share-btn whatsapp" onclick="shareOn('whatsapp')">
-                                    <span class="share-icon">💬</span>
-                                    <span>Share on WhatsApp</span>
-                                </button>
-                            </div>
-                            <p class="final-position-tracker">Your final position: <span id="finalPositionTracker">47,832</span></p>
-                        </div>
+                        <button class="close-modal-btn" onclick="closeModal()">Close</button>
                     </div>
                 </div>
             </div>
