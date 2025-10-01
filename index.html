@@ -3,7 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NoKier 2 - Finally. A phone that works for everyone... eventually.</title>
+    <title>NoKier 2 - The Ultimate Downgrade | Two-Tier Technology™</title>
+    <meta name="description" content="Featuring Two-Tier Technology™, means-tested ringtones, and a mandatory £2,499 FREE Speech Upgrade. Join 50,000+ on the waitlist. *Not available in the Chagos Islands">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://nokier.co.uk/">
+    <meta property="og:title" content="NoKier 2 - The Ultimate Downgrade">
+    <meta property="og:description" content="Featuring Two-Tier Technology™. The phone Britain deserves. Means-tested ringtones, Release The Sausages™, and mandatory compliance checks. Join the waitlist... if you dare.">
+    <meta property="og:image" content="https://nokier.co.uk/public/Images/Nokier%20hero%20image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="NoKier 2">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://nokier.co.uk/">
+    <meta name="twitter:title" content="NoKier 2 - The Ultimate Downgrade">
+    <meta name="twitter:description" content="Featuring Two-Tier Technology™. The phone Britain deserves. Means-tested ringtones, Release The Sausages™, and mandatory compliance checks. 🌭">
+    <meta name="twitter:image" content="https://nokier.co.uk/public/Images/Nokier%20hero%20image.png">
+
+    <!-- Additional Meta -->
+    <meta name="author" content="NoKier Industries">
+    <meta name="keywords" content="NoKier 2, Two-Tier Technology, Nokia parody, British satire, Keir Starmer, political satire">
+    <link rel="canonical" href="https://nokier.co.uk/">
+
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -116,6 +140,10 @@
                     <div class="widget-step active" data-step="1">
                         <h3>Step 1: Feature Priority</h3>
                         <p class="step-description">Which NoKier 2 feature matters most to you?</p>
+                        <div class="form-alert error" id="alert-step1">
+                            <span class="alert-icon">⚠️</span>
+                            <span class="alert-message"></span>
+                        </div>
                         <select id="widgetPolicy" class="widget-select">
                             <option value="">-- Please select --</option>
                             <option value="means-tested-ringtones">Means-Tested Ringtones (polyphonic access based on income)</option>
@@ -162,6 +190,10 @@
                     <div class="widget-step" data-step="3">
                         <h3>Step 3: Compliance Declaration</h3>
                         <p class="step-description">The following agreements must be acknowledged</p>
+                        <div class="form-alert error" id="alert-step3">
+                            <span class="alert-icon">🪖</span>
+                            <span class="alert-message"></span>
+                        </div>
                         <div class="checkbox-list">
                             <label class="fancy-checkbox">
                                 <input type="checkbox" id="check1">
@@ -198,6 +230,10 @@
                     <div class="widget-step" data-step="5">
                         <h3>Step 5: Propagandazteilen</h3>
                         <p class="step-description">You vill share ze product mit your network (optional but highly encouraged)</p>
+                        <div class="form-alert error" id="alert-step5">
+                            <span class="alert-icon">📢</span>
+                            <span class="alert-message"></span>
+                        </div>
                         <div class="share-verification-box">
                             <div class="verification-status">
                                 <p class="verification-label">Your Current Waitlist Position:</p>
@@ -231,6 +267,10 @@
                     <div class="widget-step" data-step="6">
                         <h3>Step 6: SHOW ME ZE PAPERZZZ</h3>
                         <p class="step-description">Zis upgrade ist NICHT optional!</p>
+                        <div class="form-alert error" id="alert-step6">
+                            <span class="alert-icon">🪖</span>
+                            <span class="alert-message"></span>
+                        </div>
                         <div class="addon-card selected locked" id="freeSpeechAddon" onclick="attemptToggleAddon(this)">
                             <div class="addon-header">
                                 <div class="addon-icon">🗽</div>
@@ -254,6 +294,10 @@
                     <div class="widget-step" data-step="7">
                         <h3>Step 7: Finalize Your Application</h3>
                         <p class="step-description">Enter your contact details to complete registration</p>
+                        <div class="form-alert error" id="alert-step7">
+                            <span class="alert-icon">⚠️</span>
+                            <span class="alert-message"></span>
+                        </div>
                         <div class="order-summary" id="orderSummary">
                             <h4>Your Order:</h4>
                             <div class="summary-line">

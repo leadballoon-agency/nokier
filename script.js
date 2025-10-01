@@ -36,15 +36,38 @@ let currentStepNum = 1;
 let assessmentData = {};
 let sausageSequence = [];
 
+// Show in-form alert
+function showAlert(stepNumber, message) {
+    const alert = document.getElementById(`alert-step${stepNumber}`);
+    if (alert) {
+        alert.querySelector('.alert-message').textContent = message;
+        alert.classList.add('show');
+
+        // Auto-hide after 5 seconds
+        setTimeout(() => {
+            alert.classList.remove('show');
+        }, 5000);
+    }
+}
+
+// Hide alert
+function hideAlert(stepNumber) {
+    const alert = document.getElementById(`alert-step${stepNumber}`);
+    if (alert) {
+        alert.classList.remove('show');
+    }
+}
+
 function nextStep(step) {
     // Validate current step
     if (step === 2) {
         const policy = document.getElementById('widgetPolicy').value;
         if (!policy) {
-            alert('Please select your favorite government policy');
+            showAlert(1, 'Please select your favorite government policy feature');
             return;
         }
         assessmentData.favoritePolicy = policy;
+        hideAlert(1);
     }
 
     if (step === 4) {
@@ -54,11 +77,12 @@ function nextStep(step) {
 
         // All checkboxes must be checked to proceed
         if (!check1 || !check2 || !check3) {
-            alert('🪖 ACHTUNG! All boxes must be checked! Zis is not optional! You vill comply!');
+            showAlert(3, 'ACHTUNG! All boxes must be checked! Zis is not optional! You vill comply!');
             return;
         }
 
         assessmentData.compliance = { check1, check2, check3 };
+        hideAlert(3);
     }
 
     // Update share verification display when entering step 5
@@ -153,7 +177,7 @@ function sausageClick(number) {
 // Attempt to toggle locked add-on
 function attemptToggleAddon(element) {
     if (element.classList.contains('locked')) {
-        alert('NEIN! Zis ist MANDATORY! You cannot proceed vizout ze FREE Speech Upgrade. Zis ist ze LAW!');
+        showAlert(6, 'NEIN! Zis ist MANDATORY! You cannot proceed vizout ze FREE Speech Upgrade. Zis ist ze LAW!');
         return;
     }
     toggleAddon(element);
@@ -203,9 +227,11 @@ function completeAssessment() {
     const email = document.getElementById('widgetEmail').value;
 
     if (!email || !email.includes('@')) {
-        alert('Please enter a valid email address');
+        showAlert(7, 'Please enter a valid email address');
         return;
     }
+
+    hideAlert(7);
 
     assessmentData.email = email;
     assessmentData.timestamp = new Date().toISOString();
@@ -311,7 +337,7 @@ function modalShareOn(platform) {
 }
 
 function shareOn(platform) {
-    const url = encodeURIComponent(window.location.href);
+    const url = encodeURIComponent('https://nokier.co.uk/');
     const text = encodeURIComponent('Check out NoKier 2 - The Ultimate Downgrade. Featuring Two-Tier Technology™ 🌭');
 
     let shareUrl;
@@ -392,12 +418,12 @@ function jumpQueue() {
         modalShares.textContent = MAX_SHARES - sharesCount;
     }
 
-    // Notify about position change - make it clear the penalty hit them
+    // Show in-modal notification about position change
     const remaining = MAX_SHARES - sharesCount;
     if (remaining > 0) {
-        alert(`Share recorded.\n\nWaitlist size: ${currentWaitlist.toLocaleString()} people\n\nYour estimated position: ${newPosition.toLocaleString()} (includes +${penalty} position adjustment for ${sharesCount} share${sharesCount > 1 ? 's' : ''})\n\nRemaining engagement opportunities: ${remaining}`);
+        showAlert(5, `Share recorded! Waitlist size: ${currentWaitlist.toLocaleString()} people. Your estimated position: ${newPosition.toLocaleString()} (includes +${penalty} adjustment for ${sharesCount} share${sharesCount > 1 ? 's' : ''}). Remaining shares: ${remaining}`);
     } else {
-        alert(`Maximum engagement limit reached.\n\nWaitlist size: ${currentWaitlist.toLocaleString()} people\n\nYour final position: ${newPosition.toLocaleString()} (includes +${penalty} position adjustment for ${sharesCount} shares)\n\nThank you for your participation.`);
+        showAlert(5, `Maximum engagement limit reached! Waitlist: ${currentWaitlist.toLocaleString()} people. Your final position: ${newPosition.toLocaleString()} (includes +${penalty} adjustment). Thank you for your participation.`);
     }
 }
 
