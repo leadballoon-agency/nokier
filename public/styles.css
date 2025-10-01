@@ -1659,3 +1659,19 @@ html {
     color: rgba(255, 255, 255, 0.8);
     margin: 15px 0 25px;
 }
+
+/* Crypto payment styling */
+.hero-subprice {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-style: italic;
+    margin-top: 8px;
+}
+
+.hero-payment {
+    font-size: 1rem;
+    color: #fbbf24;
+    font-weight: 600;
+    margin-top: 12px;
+    letter-spacing: 0.5px;
+}
