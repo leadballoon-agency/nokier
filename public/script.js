@@ -555,6 +555,44 @@ function copyAddress() {
     });
 }
 
+// Payment modal functions
+function showPaymentModal() {
+    const modal = document.getElementById('paymentModal');
+    modal.classList.remove('hidden');
+    setTimeout(() => {
+        modal.classList.add('active');
+    }, 10);
+    document.body.style.overflow = 'hidden';
+}
+
+function closePaymentModal() {
+    const modal = document.getElementById('paymentModal');
+    modal.classList.remove('active');
+    setTimeout(() => {
+        modal.classList.add('hidden');
+    }, 300);
+    document.body.style.overflow = '';
+}
+
+function copyPaymentAddress() {
+    const address = document.getElementById('paymentXmrAddress').textContent;
+
+    navigator.clipboard.writeText(address).then(() => {
+        const btn = event.target;
+        const originalText = btn.textContent;
+        btn.style.background = '#10b981'; // Green
+        btn.textContent = 'Copied!';
+
+        setTimeout(() => {
+            btn.textContent = originalText;
+            btn.style.background = '';
+        }, 2000);
+    }).catch(err => {
+        console.error('Failed to copy:', err);
+        alert('Failed to copy address. Please copy manually.');
+    });
+}
+
 // Easter egg: Click the background phone image multiple times
 let clickCount = 0;
 const phoneImage = document.querySelector('.hero-bg-image') || document.querySelector('.phone-image-full') || document.querySelector('.phone-image');
