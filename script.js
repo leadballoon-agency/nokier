@@ -87,7 +87,7 @@ function nextStep(step) {
 
     // Update share verification display when entering step 5
     if (step === 5) {
-        updateModalQueue();
+        updateModalQueue(); // Don't await here, let it update async
     }
 
     // Update UI
@@ -105,9 +105,9 @@ function updateProgress() {
 }
 
 // Update modal queue display
-function updateModalQueue() {
+async function updateModalQueue() {
     const penalty = sharesCount * 100;
-    const currentWaitlist = getWaitlistCount();
+    const currentWaitlist = await getWaitlistCount();
 
     // Your position would be: current waitlist + 1 (you're new) + share penalty
     const estimatedPosition = currentWaitlist + 1 + penalty;
