@@ -18,6 +18,7 @@
   "homepage": "https://github.com/leadballoon-agency/nokier#readme",
   "description": "",
   "dependencies": {
-    "@neondatabase/serverless": "^1.0.2"
+    "@neondatabase/serverless": "^1.0.2",
+    "playwright": "^1.55.1"
   }
 }

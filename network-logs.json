@@ -1,0 +1,94 @@
+[
+  {
+    "url": "https://nokier.co.uk/",
+    "status": 404,
+    "statusText": "",
+    "headers": {
+      "cache-control": "public, max-age=0, must-revalidate",
+      "content-encoding": "br",
+      "content-type": "text/html; charset=utf-8",
+      "date": "Wed, 01 Oct 2025 21:06:53 GMT",
+      "server": "Vercel",
+      "strict-transport-security": "max-age=63072000",
+      "x-vercel-error": "NOT_FOUND",
+      "x-vercel-id": "fra1::pgj7l-1759352813199-b94d0ca4f54e"
+    }
+  },
+  {
+    "url": "https://nokier.co.uk/",
+    "status": 404,
+    "statusText": "",
+    "headers": {
+      "cache-control": "public, max-age=0, must-revalidate",
+      "content-encoding": "br",
+      "content-type": "text/html; charset=utf-8",
+      "date": "Wed, 01 Oct 2025 21:06:54 GMT",
+      "server": "Vercel",
+      "strict-transport-security": "max-age=63072000",
+      "x-vercel-error": "NOT_FOUND",
+      "x-vercel-id": "fra1::7bwhn-1759352814372-b93afb3b7a63"
+    }
+  },
+  {
+    "url": "https://nokier.co.uk/index.html",
+    "status": 404,
+    "statusText": "",
+    "headers": {
+      "cache-control": "public, max-age=0, must-revalidate",
+      "content-encoding": "br",
+      "content-type": "text/html; charset=utf-8",
+      "date": "Wed, 01 Oct 2025 21:06:54 GMT",
+      "server": "Vercel",
+      "strict-transport-security": "max-age=63072000",
+      "x-vercel-error": "NOT_FOUND",
+      "x-vercel-id": "fra1::7bwhn-1759352814582-2ac72bc38d70"
+    }
+  },
+  {
+    "url": "https://nokier.co.uk/api/hello",
+    "status": 200,
+    "statusText": "",
+    "headers": {
+      "age": "0",
+      "cache-control": "public, max-age=0, must-revalidate",
+      "content-length": "32",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Wed, 01 Oct 2025 21:06:55 GMT",
+      "etag": "W/\"20-8h0cx/lP/mBdpnDn6zbAlDpWsUw\"",
+      "server": "Vercel",
+      "strict-transport-security": "max-age=63072000",
+      "x-vercel-cache": "MISS",
+      "x-vercel-id": "fra1::iad1::vhptq-1759352815200-ca4e49679097"
+    }
+  },
+  {
+    "url": "https://nokier.co.uk/styles.css",
+    "status": 404,
+    "statusText": "",
+    "headers": {
+      "cache-control": "public, max-age=0, must-revalidate",
+      "content-encoding": "br",
+      "content-type": "text/html; charset=utf-8",
+      "date": "Wed, 01 Oct 2025 21:06:56 GMT",
+      "server": "Vercel",
+      "strict-transport-security": "max-age=63072000",
+      "x-vercel-error": "NOT_FOUND",
+      "x-vercel-id": "fra1::8465w-1759352816178-211e2a869ce9"
+    }
+  },
+  {
+    "url": "https://nokier.co.uk/script.js",
+    "status": 404,
+    "statusText": "",
+    "headers": {
+      "cache-control": "public, max-age=0, must-revalidate",
+      "content-encoding": "br",
+      "content-type": "text/html; charset=utf-8",
+      "date": "Wed, 01 Oct 2025 21:06:56 GMT",
+      "server": "Vercel",
+      "strict-transport-security": "max-age=63072000",
+      "x-vercel-error": "NOT_FOUND",
+      "x-vercel-id": "fra1::nsdwd-1759352816380-2d5cbc09817f"
+    }
+  }
+]

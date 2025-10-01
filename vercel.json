@@ -1,12 +1,5 @@
 {
-  "routes": [
-    {
-      "src": "/",
-      "dest": "/index.html"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/$1"
-    }
-  ]
+  "buildCommand": "",
+  "outputDirectory": "public",
+  "cleanUrls": true
 }
