@@ -1191,6 +1191,53 @@ body {
     margin-top: 15px !important;
 }
 
+/* Success Share Section */
+.success-share-section {
+    margin-top: 40px;
+    padding: 30px;
+    background: linear-gradient(135deg, rgba(18, 65, 145, 0.05) 0%, rgba(220, 38, 38, 0.05) 100%);
+    border-radius: 12px;
+    border: 2px dashed var(--gray-light);
+}
+
+.success-share-section h3 {
+    font-size: 1.5rem;
+    color: var(--nokia-blue);
+    margin-bottom: 15px;
+}
+
+.success-share-text {
+    font-size: 1.1rem;
+    color: var(--gray-dark);
+    margin-bottom: 8px;
+}
+
+.success-share-hint {
+    font-size: 0.9rem;
+    color: var(--red-accent);
+    font-style: italic;
+    margin-bottom: 25px;
+}
+
+.success-share-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.final-position-tracker {
+    font-size: 1rem;
+    color: var(--gray-medium);
+    margin-top: 15px;
+}
+
+.final-position-tracker span {
+    font-weight: 700;
+    color: var(--nokia-blue);
+    font-size: 1.2rem;
+}
+
 .hidden {
     display: none;
 }

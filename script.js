@@ -269,6 +269,7 @@ function completeAssessment() {
     document.getElementById('successMessage').classList.remove('hidden');
     document.getElementById('tierBadge').textContent = tier;
     document.getElementById('finalQueue').textContent = assessmentData.queueNumber.toLocaleString();
+    document.getElementById('finalPositionTracker').textContent = assessmentData.queueNumber.toLocaleString();
 
     // Scroll to success in modal
     setTimeout(() => {
@@ -416,6 +417,16 @@ function jumpQueue() {
     const modalShares = document.getElementById('modalSharesRemaining');
     if (modalShares) {
         modalShares.textContent = MAX_SHARES - sharesCount;
+    }
+
+    // Update final position tracker on success screen
+    const finalPositionTracker = document.getElementById('finalPositionTracker');
+    if (finalPositionTracker) {
+        finalPositionTracker.textContent = newPosition.toLocaleString();
+        finalPositionTracker.style.color = '#dc2626'; // Turn red
+        setTimeout(() => {
+            finalPositionTracker.style.color = 'var(--nokia-blue)';
+        }, 1000);
     }
 
     // Show in-modal notification about position change
