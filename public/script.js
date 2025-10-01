@@ -244,13 +244,12 @@ async function completeAssessment() {
     const sharePenalty = sharesCount * 100;
     assessmentData.queueNumber = totalSignups + 1 + sharePenalty;
 
-    // Determine tier (satirical logic)
+    // Determine tier (satirical TWO-TIER logic)
     let tier = 'TIER 2';
     if (assessmentData.income === 'Inherited Wealth') {
         tier = 'TIER 1';
-    } else if (assessmentData.income === 'Heating or Eating') {
-        tier = 'TIER 3';
     }
+    // Everyone else is TIER 2 - that's the joke!
     assessmentData.tier = tier;
 
     // Save to Neon database
