@@ -2,8 +2,14 @@
 const { neon } = require('@neondatabase/serverless');
 
 module.exports = async function handler(req, res) {
-    // CORS headers
-    res.setHeader('Access-Control-Allow-Origin', '*');
+    // CORS headers - restrict to your domain only
+    const allowedOrigins = ['https://nokier.co.uk', 'https://www.nokier.co.uk'];
+    const origin = req.headers.origin;
+
+    if (allowedOrigins.includes(origin)) {
+        res.setHeader('Access-Control-Allow-Origin', origin);
+    }
+
     res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
@@ -28,9 +34,28 @@ module.exports = async function handler(req, res) {
             freeSpeechUpgrade
         } = req.body;
 
-        // Validate required fields
-        if (!email || !email.includes('@')) {
+        // Validate email with proper regex
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!email || !emailRegex.test(email)) {
             return res.status(400).json({ error: 'Valid email is required' });
+        }
+
+        // Validate and sanitize text inputs
+        if (favoritePolicy && favoritePolicy.length > 500) {
+            return res.status(400).json({ error: 'Favorite policy too long (max 500 characters)' });
+        }
+
+        if (income && income.length > 200) {
+            return res.status(400).json({ error: 'Income field too long (max 200 characters)' });
+        }
+
+        // Validate numeric inputs
+        if (sharesCount && (sharesCount < 0 || sharesCount > 100)) {
+            return res.status(400).json({ error: 'Invalid shares count' });
+        }
+
+        if (queueNumber && queueNumber < 0) {
+            return res.status(400).json({ error: 'Invalid queue number' });
         }
 
         // Check if email already exists
