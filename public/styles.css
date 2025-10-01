@@ -1546,6 +1546,31 @@ body {
     opacity: 0.8;
 }
 
+.footer-disclaimer-box {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(255, 69, 0, 0.08) 100%);
+    border: 2px solid rgba(255, 165, 0, 0.4);
+    border-radius: 12px;
+    padding: 30px;
+    margin: 40px auto;
+    max-width: 800px;
+    text-align: center;
+}
+
+.footer-disclaimer-box h3 {
+    color: #FFA500;
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.footer-disclaimer-box p {
+    margin: 15px 0;
+    font-size: 1rem;
+    line-height: 1.7;
+    opacity: 0.95;
+}
+
 .footer-bottom {
     text-align: center;
     padding-top: 30px;
