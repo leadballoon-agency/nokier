@@ -410,8 +410,11 @@ function shareOn(platform) {
                 jumpQueue();
             }, 1000);
         } else {
-            setTimeout(() => {
-                alert('⚠️ Share limit reached.\n\nYour position cannot get any worse from additional shares.\n\nFinal position: ' + (47832 + (sharesCount * 100)).toLocaleString());
+            // They've already hit the limit, show friendly message
+            setTimeout(async () => {
+                const currentWaitlist = await getWaitlistCount();
+                const finalPosition = currentWaitlist + 1 + (sharesCount * 100);
+                alert('⚠️ Share limit reached.\n\nYou\'ve already shared ' + MAX_SHARES + ' times!\n\nYour position cannot get any worse from additional shares.\n\nFinal position: ' + finalPosition.toLocaleString());
             }, 500);
         }
     }
