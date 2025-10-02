@@ -1055,6 +1055,118 @@ body {
     font-weight: 600;
 }
 
+/* Bump Offer */
+.bump-offer {
+    margin-top: 30px;
+    padding: 25px;
+    background: linear-gradient(135deg, rgba(255, 140, 0, 0.15) 0%, rgba(255, 69, 0, 0.1) 100%);
+    border: 3px dashed rgba(255, 140, 0, 0.6);
+    border-radius: 12px;
+}
+
+.bump-header {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.bump-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #FF6600 0%, #FF8C00 100%);
+    color: white;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+}
+
+.bump-header h4 {
+    font-size: 1.5rem;
+    color: var(--nokia-blue);
+    margin: 10px 0 5px;
+}
+
+.bump-tagline {
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--gray-dark);
+    font-style: italic;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.bump-features {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.bump-features ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.bump-features li {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--gray-light);
+    font-size: 0.95rem;
+    color: var(--gray-dark);
+}
+
+.bump-features li:last-child {
+    border-bottom: none;
+}
+
+.bump-checkbox-container {
+    background: white;
+    border: 2px solid #FF8C00;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 15px;
+}
+
+.bump-checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+}
+
+.bump-checkbox {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    accent-color: #FF6600;
+}
+
+.bump-checkbox-text {
+    font-size: 1.1rem;
+    color: var(--gray-dark);
+    line-height: 1.4;
+}
+
+.bump-checkbox-text strong {
+    color: #FF6600;
+    font-size: 1.2rem;
+}
+
+.bump-price {
+    color: #FF6600;
+    font-weight: 700;
+    font-size: 1.15rem;
+}
+
+.bump-disclaimer {
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--gray-medium);
+    font-style: italic;
+    margin: 0;
+}
+
 /* Success Message */
 .success-message {
     text-align: center;
