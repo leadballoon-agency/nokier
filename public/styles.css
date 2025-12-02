@@ -1703,6 +1703,354 @@ body {
     }
 }
 
+/* Social Proof Section */
+.social-proof {
+    padding: 100px 20px;
+    background: var(--white);
+}
+
+.proof-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.proof-eyebrow {
+    display: inline-block;
+    background: var(--nokia-blue);
+    color: var(--white);
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.proof-header h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--gray-dark);
+    font-weight: 700;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.testimonial-card {
+    background: var(--off-white);
+    border-radius: 20px;
+    padding: 35px;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.testimonial-card.featured {
+    background: linear-gradient(135deg, var(--nokia-blue) 0%, var(--light-blue) 100%);
+    color: var(--white);
+}
+
+.testimonial-badge {
+    position: absolute;
+    top: -12px;
+    left: 30px;
+    background: var(--red-accent);
+    color: var(--white);
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.testimonial-stars {
+    color: #fbbf24;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+.testimonial-card.featured .testimonial-stars {
+    color: #fde68a;
+}
+
+.testimonial-text {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 25px;
+    font-style: italic;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.author-avatar {
+    width: 50px;
+    height: 50px;
+    background: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.testimonial-card.featured .author-avatar {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.author-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.author-name {
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.author-title {
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+.proof-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    background: linear-gradient(135deg, rgba(18, 65, 145, 0.05) 0%, rgba(220, 38, 38, 0.05) 100%);
+    padding: 40px;
+    border-radius: 20px;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    color: var(--nokia-blue);
+    line-height: 1;
+    margin-bottom: 8px;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: var(--gray-medium);
+    font-weight: 500;
+}
+
+/* Urgency Banner */
+.urgency-banner {
+    background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+    padding: 25px 20px;
+}
+
+.urgency-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.urgency-icon {
+    font-size: 1.8rem;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.urgency-text {
+    color: var(--white);
+    font-size: 1rem;
+    text-align: center;
+    max-width: 600px;
+}
+
+.urgency-highlight {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 2px 10px;
+    border-radius: 4px;
+    font-weight: 700;
+}
+
+.urgency-cta {
+    background: var(--white);
+    color: #dc2626;
+    border: none;
+    padding: 14px 30px;
+    border-radius: 50px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.urgency-cta:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Trust Section */
+.trust-section {
+    padding: 60px 20px;
+    background: var(--off-white);
+}
+
+.trust-badges {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.trust-badge {
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.badge-icon {
+    display: block;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.badge-text {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--gray-dark);
+    margin-bottom: 5px;
+}
+
+.badge-subtext {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--gray-medium);
+    font-style: italic;
+}
+
+/* FAQ Section */
+.faq-section {
+    padding: 100px 20px;
+    background: var(--white);
+}
+
+.faq-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.faq-header h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--gray-dark);
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.faq-header p {
+    font-size: 1.1rem;
+    color: var(--gray-medium);
+}
+
+.faq-grid {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    border: 2px solid var(--gray-light);
+    border-radius: 12px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+    border-color: var(--nokia-blue);
+}
+
+.faq-item.active {
+    border-color: var(--nokia-blue);
+    box-shadow: var(--shadow-md);
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px;
+    font-weight: 600;
+    color: var(--gray-dark);
+    font-size: 1.1rem;
+}
+
+.faq-toggle {
+    font-size: 1.5rem;
+    color: var(--nokia-blue);
+    transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-toggle {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 300px;
+    padding: 0 25px 25px;
+}
+
+.faq-answer p {
+    color: var(--gray-medium);
+    line-height: 1.7;
+}
+
+/* Responsive for new sections */
+@media (max-width: 768px) {
+    .proof-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        padding: 30px;
+    }
+
+    .trust-badges {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .urgency-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* Smooth Scrolling */
 html {
     scroll-behavior: smooth;

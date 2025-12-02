@@ -1,3 +1,8 @@
+// Toggle FAQ accordion
+function toggleFaq(element) {
+    element.classList.toggle('active');
+}
+
 // Open modal
 function openModal() {
     const modal = document.getElementById('modalOverlay');
