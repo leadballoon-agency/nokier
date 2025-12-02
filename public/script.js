@@ -63,7 +63,7 @@ function nextStep(step) {
     if (step === 2) {
         const policy = document.getElementById('widgetPolicy').value;
         if (!policy) {
-            showAlert(1, 'Please select your favorite government policy feature');
+            showAlert(1, 'Please select your preferred freebie feature');
             return;
         }
         assessmentData.favoritePolicy = policy;
@@ -246,8 +246,8 @@ async function completeAssessment() {
 
     // Determine tier (satirical TWO-TIER logic)
     let tier = 'TIER 2';
-    if (assessmentData.income === 'Inherited Wealth') {
-        tier = 'TIER 1';
+    if (assessmentData.income === "Lord Alli's Contact List") {
+        tier = 'TIER 1'; // Only Lord Alli's contacts get Tier 1!
     }
     // Everyone else is TIER 2 - that's the joke!
     assessmentData.tier = tier;
@@ -377,7 +377,7 @@ function modalShareOn(platform) {
 
 function shareOn(platform) {
     const url = encodeURIComponent('https://nokier.co.uk/');
-    const text = encodeURIComponent('Check out NoKier 2 - The Ultimate Downgrade. Featuring Two-Tier Technology™ 🌭');
+    const text = encodeURIComponent('NoKier 2 - Now with Freebies Mode™! Designer Specs Cam, Taylor Swift tickets, and £100k in gifts. 16 scandals. 14 months. One phone. 👓🌭');
 
     let shareUrl;
 
